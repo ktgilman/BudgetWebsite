@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Create a Budget</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <h1>Create a Budget</h1>
+    <p>Welcome! Before starting your budget, log in or sign up, so that you can save your work.</p>
+    <button id="sign_up">Sign Up</button>
+    <button id="log_in">Log In</button>
+
+    <div id="user_signup" class="hidden">
+        <form>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name">
+            <label for="new_username">Username:</label>
+            <input type="text" id="new_username">
+            <label for="new_password">Password:</label>
+            <input type="password" id="new_password">
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password">
+            <button id="signup_button">Sign Up</button>
+        </form>
+    </div>
+    <div id="user_login" class="hidden">
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <button id="login_button">Log In</button>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
