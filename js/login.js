@@ -20,7 +20,7 @@ $('#login_button').click(function(evt){
     if (completionCheck(loginData)) {
         $.ajax({
             method: "POST",
-            url: "../php/login.php",
+            url: "php/login.php",
             data: loginData,
             success: function(returnNum, textStatus, jqXHR){
                 if (returnNum=="100") {
@@ -31,15 +31,14 @@ $('#login_button').click(function(evt){
                     alert("We are experiencing difficulties.  Please try again later");
                 }else{
                     var results = returnNum.split(",");
-                    var expiration = 30 / 60 / 24;
-                    $.cookie("authId", results[0], {expires: expiration});
-                    $.cookie("authPass", results[1], {expires: expiration});
-                    //var d = new Date();
-                    //d.setTime(d.getTime() + (30*60*1000));
-                    //var expires = "expires="+d.toUTCString();
-                    //document.cookie="authId="+results+"; "+expires;
-                    //document.cookie="authPass="+results[1]+"; "+expires;
-                    $window.location.href="mybudget.html";
+                    console.log(results);
+                
+                    var d = new Date();
+                    d.setTime(d.getTime() + (30*60*1000));
+                    var expires = "expires="+d.toUTCString();
+                    document.cookie="authId="+results[0]+"; "+expires;
+                    document.cookie="authPass="+results[1]+"; "+expires;
+                    document.location.href="mybudget.html";
                 }
             }            
         });
