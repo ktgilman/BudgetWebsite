@@ -5,7 +5,6 @@
     
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $returnArr;
     
     if(mysqli_connect_errno()){
         printf("Connect Failed: %s\n",mysqli_connect_error());
@@ -23,7 +22,9 @@
                 if($password != $testPassword){
                     echo "200";
                 }else{
-                    $authId = rand("1e6","9e6");
+                    $idFirstPart = substr($username, 0,4);
+                    $idSecondPart = strval(rand("1E3", "9E3"));
+                    $authId = $idFirstPart.$idSecondPart;
                     $authPass = rand("1e6","9e6");
                     $insertAuthNums = "UPDATE user SET authId = '$authId',authPass = '$authPass' WHERE id = '$testId'";
                     $insertResult = mysqli_query($mysqli, $insertAuthNums);

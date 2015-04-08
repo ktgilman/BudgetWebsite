@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 
-<html>
-<head>
-    <title>My Budget</title>
-</head>
-
-<body>
-    <a href="index.html">Click Here to go back to the login page</a>
-
-
-</body>
+<html ng-app="toggleBudget">
+    <head>
+        <title>My Budget</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    
+    <body ng-controller="budgetControl">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="moreinfo.html">More Info</a></li>
+            </ul>
+        </nav>
+        <div ng-repeat="item in user">
+            <h1>{{item.firstName}} {{item.lastName}}'s Budget</h1>
+            <h2>Hello {{item.firstName}}!</h2>
+            <h5>Income:</h5>
+            <h3>Your Annual Income: {{item.income | currency}}</h3>
+            <h4>Your monthly income is {{item.income / 12 | currency}}</h4>
+            <label for="income" id="incomeLabel">Change Annual Income</label>
+            <input type="text" id="income" ng-model="item.income">
+            <h5>Expenses:</h5>
+            <table>
+                <tr>
+                    <th>Expense</th>
+                    <th>Amount</th>
+                    <th>% of Income</th>
+                    <th>Change</th>
+                    <th>Ideal %</th>
+                    <th>Ideal Amount</th>
+                    <th>Check</th>
+                </tr><tr>
+                    <th><label for="household">Household</label></th>
+                    <td>{{item.household | currency}}</td>
+                    <td>{{item.household / (item.income / 12)*100 | number:0}} %</td>
+                    <td><input type="text" id="household" ng-model="item.household"></td>
+                    <td>25%</td>
+                    <td>{{(item.income / 12) * (25 / 100) | currency}}</td>
+                    <td></td>
+                </tr><tr>
+                    <th><label for="auto">Auto</label></th>
+                    <td>{{item.auto | currency}}</td>
+                    <td>{{item.auto / (item.income / 12) * 100 | number:0}} %</td>
+                    <td><input type="text" id="auto" ng-model="item.auto"></td>
+                </tr><tr>
+                    <th><label for="other">Other</label></th>
+                    <td>{{item.other | currency}}</td>
+                    <td>{{item.other / (item.income / 12) * 100 | number:0}} %</td>
+                    <td><input type="text" id="other" ng-model="item.other"></td>
+                </tr>                 
+                
+            </table>
+        </div>
+        
+            
+        <button ng-click="save()">Save</button>
+        
+        <!--<pre ng-bind="user | json">-->
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="js/newbudget.js"></script>
+        <script src="js/calculations.js"></script>
+    </body>
 </html>

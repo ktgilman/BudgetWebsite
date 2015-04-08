@@ -1,11 +1,148 @@
+/*************************
+ *
+ *Main
+ *
+ *************************/
 
+h1,h2,h3,h4,h5,p,ul,li,label,form{
+    margin:0;
+    padding:0;
+}
+
+body{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2.5%;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
 
 .hidden{
     display: none;
 }
 
-form{
-    position: fixed;
-    width: 50%;
-    margin: 10% 25%;
+
+/*************************
+ *
+ *Nav
+ *
+ ************************/
+
+nav ul{
+    list-style-type: none;
+    text-align: center;
+    margin: 5% 0;
 }
+
+nav li{
+    display: inline-block;
+    margin: 0 2%;
+}
+
+
+
+
+
+
+
+/*************************
+ *
+ *Content
+ *
+ *************************/
+
+h1{
+    font-size: 1.6em;
+    text-align: center;
+}
+
+p{
+    margin: 5% 0;
+}
+
+#user_signup, #user_login{
+    width: 100%;
+    position: fixed;
+}
+
+form{
+    width: 95%;
+    margin-right: 2.5%;
+}
+
+.formWrapper{
+    width: 40%;
+    margin: 0 auto;
+}
+
+input{
+    width: 100%;
+    margin: 2% 0;
+}
+
+button{
+    display: block;
+    margin: 5% auto;
+}
+
+
+/****************************
+ *
+ *Budget Page
+ *
+ ****************************/
+
+h2{
+    margin: 5% 0;
+    font-size: 1.5em;
+}
+
+h3{
+    margin: 0 0 0 5%;
+    font-size: 1em;
+}
+
+h4{
+    margin: 0 0 0 8%;
+    font-size: .9em;
+}
+
+#incomeLabel{
+    font-size: .75em;
+    padding-left: 8%;
+}
+
+#income{
+    margin: 2% 0;
+    width: 20%;
+    font-size: .75em;
+}
+
+h5{
+    font-size: 1.1em;
+    margin: 2% 0;
+    text-decoration: underline;
+}
+
+table{
+    width: 100%;
+}
+
+td, th{
+    width: 14%;
+    text-align: center;
+    font-size: .6em;
+}
+
+td input{
+    width: 100%;
+    margin: 0 auto;
+    font-size: .7em;
+}
+
+
+
+
