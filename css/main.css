@@ -31,6 +31,10 @@ a:link, a:visited{
  *
  ************************/
 
+nav{
+    font-size: .5em;
+}
+
 nav ul{
     list-style-type: none;
     text-align: center;
@@ -40,9 +44,8 @@ nav ul{
 nav li{
     display: inline-block;
     margin: 0 2%;
+    padding: 2%;
 }
-
-
 
 
 
@@ -61,21 +64,50 @@ h1{
 
 p{
     margin: 5% 0;
+    padding: 0 5%;
 }
 
 #user_signup, #user_login{
     width: 100%;
-    position: fixed;
 }
 
 form{
+    position: fixed;
+    left: 0;
+    top: 2%;
+    height: 100%;
     width: 95%;
     margin-right: 2.5%;
 }
 
 .formWrapper{
-    width: 40%;
+    width: 75%;
+    padding: 5%;
+    border-radius: 20%;
     margin: 0 auto;
+}
+
+.formTop{
+    text-align: center;
+    margin: 2.5% 0;
+}
+
+label{
+    font-size: .75em;
+}
+
+.buttonFormWrapper{
+    text-align: center;
+}
+
+#signup_button, #login_button{
+    margin: 10% 0;
+    display: inline-block;
+}
+
+#cancel_button{
+    margin: 10% 0;
+    display: inline-block;
 }
 
 input{
@@ -83,9 +115,19 @@ input{
     margin: 2% 0;
 }
 
+.buttonWrap{
+    width: 30%;
+    margin: 0 auto;
+    padding: 5%;
+    border-radius: 50%;
+}
+
 button{
     display: block;
-    margin: 5% auto;
+    margin: 10% auto;
+    padding: 4%;
+    font-size: .7em;
+    font-weight: bold;
 }
 
 
@@ -141,6 +183,90 @@ td input{
     width: 100%;
     margin: 0 auto;
     font-size: .7em;
+}
+
+#budgetButtonWrapper{
+    text-align: center;
+}
+
+#saveBudget, #logOut{
+    display: inline-block;
+    margin: 5% 2%;
+    padding: 2%;
+}
+
+
+
+/***********************
+ *
+ *More Info Page
+ *
+ ************************/
+
+.linkWrap{
+    width: 75%;
+    margin: 0 auto;
+    padding: 5%;
+    border-radius: 25%;
+    font-size: .75em;
+}
+
+.onlyLink:hover{
+    padding: 2%;
+    border-radius: 20%;
+}
+
+.linkList{
+    margin: 3% 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.linkList:hover{
+    background: none;
+}
+
+/***************************
+ *
+ *Colors
+ *
+ ***************************/
+
+li:hover{
+    color: blue;
+    background-color: gray;
+}
+
+a:hover{
+    color: blue;
+    background-color: gray;
+}
+
+.active{
+    color: blue;
+    background-color: gray;
+}
+
+form{
+    background-color: rgba(256,256,256, .8);
+}
+
+.formWrapper{
+    background-image: linear-gradient(blue 50%,transparent);
+    color: white;
+}
+
+.buttonWrap, .linkWrap{
+    background-image: linear-gradient(transparent,blue);
+}
+
+button{
+    background-color: white;
+}
+
+button:hover{
+    background-color: gray;
+    color: blue;
 }
 
 

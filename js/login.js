@@ -9,6 +9,16 @@ function completionCheck(dataObject){
     }
 }
 
+function setCookieAndGo(returnValue){
+    var results = returnValue.split(",");               
+    var d = new Date();
+    d.setTime(d.getTime() + (30*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie="authId="+results[0]+"; "+expires;
+    document.cookie="authPass="+results[1]+"; "+expires;
+    document.location.href="mybudget.html";
+}
+
 $('#login_button').click(function(evt){
     evt.preventDefault();
     var usernameEntered = $('#username').val();
@@ -30,13 +40,7 @@ $('#login_button').click(function(evt){
                 }else if (returnNum == "300") {
                     alert("We are experiencing difficulties.  Please try again later");
                 }else{
-                    var results = returnNum.split(",");                
-                    var d = new Date();
-                    d.setTime(d.getTime() + (30*60*1000));
-                    var expires = "expires="+d.toUTCString();
-                    document.cookie="authId="+results[0]+"; "+expires;
-                    document.cookie="authPass="+results[1]+"; "+expires;
-                    document.location.href="mybudget.html";
+                    setCookieAndGo(returnNum);
                 }
             }            
         });

@@ -46,16 +46,18 @@
         }
         
     }
-    
     $returnValues = array(
-                "id" => $id,
-                "firstName" => $firstName,
-                "lastName" => $lastName,
-                "income" => $income,
-                "household" => $household,
-                "auto" => $auto,
-                "other" => $other
-            );
+        "id" => $id,
+        "loggedIn" => true,
+        "firstName" => $firstName,
+        "lastName" => $lastName,
+        "income" => $income,
+        "household" => $household,
+        "auto" => $auto,
+        "other" => $other
+    );
+    
+    
     
     echo json_encode($returnValues);
 ?>

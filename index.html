@@ -3,26 +3,33 @@
 <html>
 <head>
     <title>Create a Budget</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#" id="loginTop">Login</a></li>
+            <li><a href="#" id="signupTop">Sign Up</a></li>
             <li><a href="moreinfo.html">More Info</a></li>
+            <li><a href="mybudget.html">My Budget</a></li>
         </ul>
     </nav>
     <h1>Create a Budget Today!</h1>
-    <p>Welcome! Before starting your budget, log in or sign up, so that you can save your work.</p>
-    <button id="sign_up">Sign Up</button>
-    <button id="log_in">Log In</button>
+    <p>Welcome! This is a free online budgeting tool that you can use to plan and monitor your expenses. Budgeting is the fastest way to build wealth. Before starting your budget, log in or sign up, so that you can save your work.</p>
+    <div class="buttonWrap">
+        <button id="sign_up">Sign Up</button>
+        <button id="log_in">Log In</button>
+    </div>
 
     <div id="user_signup" class="hidden">
         <form>
             <div class="formWrapper">
+                <h2 class="formTop">Sign Up</h2>
                 <label for="first_name">First Name:</label>
                 <input type="text" id="first_name">
                 <label for="last_name">Last Name:</label>
@@ -33,24 +40,31 @@
                 <input type="password" id="new_password">
                 <label for="confirm_password">Confirm Password:</label>
                 <input type="password" id="confirm_password">
-                <button id="signup_button">Sign Up</button>
+                <div class="buttonFormWrapper">
+                    <button id="signup_button">Sign Up</button>
+                    <button id="cancel_button">Cancel</button>
+                </div>
             </div>
         </form>
     </div>
     <div id="user_login" class="hidden">
         <form>
             <div class="formWrapper">
+                <h2 class="formTop">Log In</h2>
                 <label for="username">Username:</label>
                 <input type="text" id="username">
                 <label for="password">Password:</label>
                 <input type="password" id="password">
-                <button id="login_button">Log In</button>
+                <div class="buttonFormWrapper">
+                    <button id="login_button">Log In</button>
+                    <button id="cancel_button">Cancel</button>
+                </div>
             </div>
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/views.js"></script>
-    <script src="js/signup.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
 </body>
 </html>
